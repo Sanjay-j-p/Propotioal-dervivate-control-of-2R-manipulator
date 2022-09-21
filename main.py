@@ -308,116 +308,11 @@ if __name__ == '__main__':
             for j in range(1,30):
                 env.step(i)
                 env.render()
-            """if(i==0):
-                positions.append(end_eff1[-1])
-            elif(i==84):
-                positions.append(end_eff1[-1])
-            elif(i==85*2-1):
-                positions.append(end_eff1[-1])
-            elif(i==85*3-1):
-                positions.append(end_eff1[-1])
-            elif(i==85*4-1):
-                positions.append(end_eff1[-1])"""
+
         i=0
         env.reset()
         break
         #elapsed1 = (time.process_time() - elapsed)
         #print("------",elapsed1)
         
-    
-        #trajectory
-    fig, ax = plt.subplots()
-    ax.set_title('Trajectory'+' [ Kp='+str(env.kp)+' Kd='+str(env.kd)+' ]')
-    ax.plot(end_eff1, end_eff2)
-    ax.plot((env.goal1x-100)/400,(env.goal1y+100)/400,linestyle = 'dotted')
-    plt.plot(end_eff1[0], end_eff2[0], marker="o", markersize=5, markeredgecolor="red", markerfacecolor="green")
-    #plt.xlim([0, 1])
-    #plt.ylim([0, 1])
-    plt.xlabel('x')
-    plt.ylabel('y')
-    plt.show()
-      
-
-    """
-    #xandy
-    fig, ax = plt.subplots()
-    #ax.set_title('Trajectory')
-    ax.plot(np.arange(len(end_eff1)), end_eff1)
-    ax.plot(np.arange(len(end_eff2)), end_eff2)
-    ax.plot(np.arange(len(end1_eff1)), end1_eff1,linestyle = 'dotted')
-    ax.plot(np.arange(len(end1_eff2)), end1_eff2,linestyle = 'dotted')
-    
-#ax.plot(np.arange(time+2), yd)
-    #plt.xlim([0, 1])
-    #plt.ylim([0, 1])
-    plt.xlabel('Time')
-    plt.ylabel('x and Y')
-    plt.legend(['X','Y','X_ref','Y_ref'])
-    
-    plt.show()"""
-    
-    """
-    #theta1and2
-    fig, ax = plt.subplots()
-    #ax.set_title('Trajectory')
-    ax.plot(np.arange(len(t1_1)), t1_1)
-    ax.plot(np.arange(len(t1_2)), t1_2)
-    ax.plot(np.arange(len(t2_1)), t2_1,linestyle = 'dotted')
-    ax.plot(np.arange(len(t2_2)), t2_2,linestyle = 'dotted')
-    
-#ax.plot(np.arange(time+2), yd)
-    #plt.xlim([0, 1])
-    #plt.ylim([0, 1])
-    plt.xlabel('Time')
-    plt.ylabel('theta1 and theta2')
-    plt.legend(['theta1','theta2','theta1_ref','theta2_ref'])
-    
-    plt.show()"""
-"""
-    #torque
-    fig, ax = plt.subplots()
-    #ax.set_title('Trajectory')
-    ax.plot(np.arange(len(torque1)), torque1)
-    ax.plot(np.arange(len(torque2)), torque2)
-
-    
-#ax.plot(np.arange(time+2), yd)
-    #plt.xlim([0, 1])
-    #plt.ylim([0, 1])
-    plt.xlabel('Time')
-    plt.ylabel('torque1 and torque2')
-    plt.legend(['torque1','torque2'])
-    
-    plt.show()"""
-    
-    
-    
-    
-    
-    
-    
-    
-"""
-start=time.time();
-            while(time.time()-start<0.1):
-                env.step(i)
-                env.render()
-                continue
-            
-            
-            
-    duration=3249
-    t=0
-    for t in range(0,duration):
-        theta1_dess[t]=the1_des1+(the1_des-the1_des1)*(10*(t/duration)**3-15*(t/duration)**4+6*(t/duration)**5)
-        theta2_dess[t]=the2_des1+(the2_des-the2_des1)*(10*(t/duration)**3-15*(t/duration)**4+6*(t/duration)**5)
-        (a1l, a2l) = [100,100]  # radius, arm length
-        (a1r, a2r) = [theta1_dess[t] ,theta2_dess[t]]
-        a1xy = np.array([200., 200.])    # a1 start (x0, y0)
-        a1xy_ = np.array([np.cos(a1r), np.sin(a1r)]) * a1l + a1xy  # a1 end and a2 start (x1, y1)
-        finger = np.array([np.cos(a1r + a2r), np.sin(a1r + a2r)]) * a2l + a1xy_
-        end1_eff1.append(finger[0]/400)
-        end1_eff2.append(finger[1]/400)
-        t2_1.append(theta1_dess[t])
-        t2_2.append(theta2_dess[t])
-"""
+ 
